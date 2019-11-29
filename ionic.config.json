@@ -1,5 +1,7 @@
 {
   "name": "saarang-wallet-vendor",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
