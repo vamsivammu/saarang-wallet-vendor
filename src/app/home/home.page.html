@@ -1,11 +1,47 @@
 <ion-header>
   <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="emit()">Emit an event</ion-button>
+  <div class="primary">
+    <div class="heading">
+        Available Balance    
+    </div>
+    <div class="balance">
+      Rs.{{balance}}
+    </div>
+  </div>
+  <div class="recents">
+    <div class="recent-text">
+        Recent Transactions
+    </div>
+
+  </div>
+  <ion-list *ngFor="let transaction of transactions">
+      <div class="each-transaction">
+        <div class="details">
+            <div class="user-id">
+              <p class="id-text">SA20U{{transaction.from}}</p>
+            </div>
+            <div class="time">
+                <p class="time-text">{{getdate(transaction.date)}}</p>
+            </div>
+        </div>
+        <div class="amount">
+            <div class="money">
+              <p class="money-text {{getclass(transaction.from)}}">{{getsign(transaction.from)}}Rs{{transaction.amount}}</p>
+            </div>  
+        </div>
+      </div>
+  </ion-list>
+  <div class="view-all-button" (click)="gototransactions()">
+    View all transactions
+  </div>  
 </ion-content>

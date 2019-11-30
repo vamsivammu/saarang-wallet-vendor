@@ -4,7 +4,8 @@ import consts from '../consts'
 import {LoadingController} from '@ionic/angular'
 import {Router} from '@angular/router'
 import {Socket} from 'ngx-socket-io'
-import {Firebase} from '@ionic-native/firebase/ngx'
+import {NativeStorage} from '@ionic-native/native-storage/ngx'
+import {FirebaseX} from '@ionic-native/firebase-x/ngx'
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -15,7 +16,7 @@ export class LoginPage implements OnInit {
   password;
   loading = false;
   token;
-  constructor(private http:HttpClient,private loadingController:LoadingController,private router:Router,private socket:Socket,private firebase:Firebase) { }
+  constructor(private http:HttpClient,private loadingController:LoadingController,private router:Router,private socket:Socket,private firebase:FirebaseX,private nativeStorage:NativeStorage) { }
 
   ngOnInit() {
     this.init()
@@ -48,9 +49,11 @@ export class LoginPage implements OnInit {
       this.socket.connect()
       this.socket.emit('join',r)
       this.http.post('https://api.saarang.org/wallet/update_device_token',{hasura_id:r['hasura_id'],token:this.token}).toPromise().then(r1=>{
+        this.nativeStorage.setItem('userdata',{hasura_id:r['hasura_id'],auth_token:r['auth_token']}).then(()=>{
+          this.router.navigate(['/home'])
+          loading.dismiss()
+        })
       
-        this.router.navigate(['/home'])
-        loading.dismiss()          
       })
     },err=>{
       loading.dismiss()

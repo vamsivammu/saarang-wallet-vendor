@@ -1,0 +1,71 @@
+.heading{
+    text-align: center;
+    font-weight:400;
+    font-size:15px;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+.balance{
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    
+}
+.primary{
+    padding-top:10px;
+    padding-bottom: 10px;
+    background: rgb(228, 172, 52);
+}
+
+.recents{
+    margin-top: 20px;
+}
+.recent-text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+.each-transaction{
+    margin-top:10px;
+    margin-bottom:10px;
+    display: flex;
+    padding-top:5px;
+    padding-bottom: 5px;
+    flex-direction: row;
+    background: whitesmoke;
+    justify-content: space-between;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    margin-left:10px;
+    justify-content: space-around;
+}
+.amount{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    justify-content: space-around;
+}
+.id-text , .money-text{
+    font-weight: 700;
+    font-size: 20px;
+    color: black;
+}
+.time-text , .closing-text{
+    color: gray;
+    font-weight: 100;
+    font-size: 10px;
+}
+.add-money{
+    color:green;
+}
+.subtract-money{
+    color: red
+}
+.view-all-button{
+    text-align: center;
+    color: rgb(79, 123, 243);
+    font-weight: bold;
+}

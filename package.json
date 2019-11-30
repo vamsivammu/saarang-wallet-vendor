@@ -22,6 +22,7 @@
     "@ionic-native/background-mode": "^5.17.1",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/firebase": "^5.17.1",
+    "@ionic-native/firebase-x": "^5.17.1",
     "@ionic-native/local-notifications": "^5.17.1",
     "@ionic-native/native-storage": "^5.17.1",
     "@ionic-native/push": "^5.17.1",
@@ -29,16 +30,17 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.7.1",
     "cordova-android": "8.1.0",
+    "cordova-plugin-androidx": "1.0.2",
+    "cordova-plugin-androidx-adapter": "1.1.0",
     "cordova-plugin-background-mode": "0.7.3",
     "cordova-plugin-badge": "0.8.8",
-    "cordova-plugin-firebase": "2.0.5",
+    "cordova-plugin-firebasex": "7.0.1",
     "cordova-plugin-local-notification": "0.9.0-beta.2",
     "cordova-plugin-nativestorage": "2.3.2",
     "cordova-support-google-services": "1.3.2",
     "core-js": "^2.5.4",
     "ngx-socket-io": "^3.0.1",
     "phonegap-plugin-multidex": "1.0.0",
-    "phonegap-plugin-push": "2.3.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -86,14 +88,23 @@
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
       "cordova-plugin-ionic-keyboard": {},
-      "phonegap-plugin-push": {
-        "ANDROID_SUPPORT_V13_VERSION": "27.+",
-        "FCM_VERSION": "17.0.+"
-      },
       "cordova-plugin-local-notification": {},
       "cordova-plugin-background-mode": {},
-      "cordova-plugin-firebase": {},
-      "cordova-plugin-nativestorage": {}
+      "cordova-plugin-nativestorage": {},
+      "cordova-plugin-firebasex": {
+        "FIREBASE_ANALYTICS_COLLECTION_ENABLED": "true",
+        "FIREBASE_PERFORMANCE_COLLECTION_ENABLED": "true",
+        "FIREBASE_CRASHLYTICS_COLLECTION_ENABLED": "true",
+        "ANDROID_ICON_ACCENT": "#FF00FFFF",
+        "ANDROID_PLAY_SERVICES_TAGMANAGER_VERSION": "17.0.0",
+        "ANDROID_FIREBASE_ANALYTICS_VERSION": "17.2.1",
+        "ANDROID_FIREBASE_MESSAGING_VERSION": "20.0.0",
+        "ANDROID_FIREBASE_CONFIG_VERSION": "19.0.3",
+        "ANDROID_FIREBASE_PERF_VERSION": "19.0.1",
+        "ANDROID_FIREBASE_AUTH_VERSION": "19.1.0",
+        "ANDROID_CRASHLYTICS_VERSION": "2.10.1",
+        "ANDROID_CRASHLYTICS_NDK_VERSION": "2.1.1"
+      }
     },
     "platforms": [
       "android"

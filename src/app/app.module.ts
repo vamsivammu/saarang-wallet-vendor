@@ -8,11 +8,12 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import {FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {Push} from '@ionic-native/push/ngx'
+
 import {SocketIoModule,SocketIoConfig} from 'ngx-socket-io'
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import {NativeStorage} from '@ionic-native/native-storage/ngx'
 // import {BackgroundMode} from '@ionic-native/background-mode/ngx'
-import {Firebase} from '@ionic-native/firebase/ngx'
+import {FirebaseX} from '@ionic-native/firebase-x/ngx'
 const cfg:SocketIoConfig={url:'https://api.saarang.org',options:{}}
 @NgModule({
   declarations: [AppComponent],
@@ -21,9 +22,9 @@ const cfg:SocketIoConfig={url:'https://api.saarang.org',options:{}}
   providers: [
     StatusBar,
     SplashScreen,
-    Push,
     LocalNotifications,
-    Firebase,
+    FirebaseX,
+    NativeStorage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
